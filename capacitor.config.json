@@ -1,0 +1,6 @@
+{
+  "appId": "br.com.avozdosbairros.app",
+  "appName": "A Voz dos Bairros",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
