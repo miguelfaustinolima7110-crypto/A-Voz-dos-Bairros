@@ -1,0 +1,27 @@
+name: Extrair projeto Android
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extrair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Extrair arquivos
+        run: |
+          unzip -o a_voz_dos_bairros_projeto_android.zip -d .
+          rm a_voz_dos_bairros_projeto_android.zip
+
+      - name: Salvar arquivos no GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Extrair arquivos do projeto"
+          git push
