@@ -32,12 +32,11 @@ jobs:
 
       - name: Instalar dependências
         run: npm install
-        
-      - name: Preparar Android
-       env:
+      - name: Preparar Android 
+        env:
             VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
             VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-          run: |
+        run: |
             npx cap add android
             npm run android:sync
             
